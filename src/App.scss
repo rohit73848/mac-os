@@ -1,14 +1,22 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html,body{
-    width: 100%;
-    height: 100%;
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: #1e1e1e;
-    color: #fff;
+main {
+  width: 100%;
+  height: 100%;
+  background-image: url(./public/wallpaper.jpg);
+  background-size: cover;
+  background-position: center;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
 }

@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.scss";
+import Dock from "./components/Dock";
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+     <main>
+      <Dock/>
+     </main>
+
   );
 };
 
