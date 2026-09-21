@@ -8,7 +8,7 @@ const Nav = () => {
         <div className="apple-icon">
             <img src="./navbar-icons/apple.svg" alt="" />
         </div>
-        <div className="nav-item">
+        <div className="nav-item name">
             <p>Rahit Biswas</p>
         </div>
 
