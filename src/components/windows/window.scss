@@ -1,6 +1,5 @@
 .window {
-  height: 250px;
-  width: 350px;
+  height: 100%;
   background-color: #060606;
   border-radius: 0.4rem;
   overflow: hidden;
@@ -47,5 +46,8 @@
         background-color: #0dc50d;
       }
     }
+  }
+  .main-content {
+    height: 100%;
   }
 }

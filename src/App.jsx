@@ -2,13 +2,13 @@ import React from "react";
 import "./App.scss";
 import Nav from "./components/Nav";
 import Dock from "./components/Dock";
-import MacWindow from "./components/windows/MacWindow";
+import Github from "./components/windows/Github";
 const App = () => {
   return (
     <main>
       <Nav />
       <Dock />
-      <MacWindow>Hello</MacWindow>
+      <Github />
     </main>
   );
 };

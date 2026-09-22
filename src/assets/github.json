@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop",
+    "title": "Snake Game",
+    "description": "Modern, responsive Snake game with multiple themes, level-based obstacle difficulty, persistent high scores, on-screen D-pad, swipe gestures, and haptic feedback.",
+    "tags": ["HTML5", "CSS3", "JavaScript"],
+    "repoLink": "https://github.com/rohit73848/snake-game",
+    "demoLink": "https://rohit73848.github.io/snake-game/"
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=600&h=400&fit=crop",
+    "title": "Canvas Image Editor",
+    "description": "Browser-based image editor with real-time filters, brightness/contrast/saturation adjustments, rotate/flip transformations, drag & drop upload, and high-resolution canvas export.",
+    "tags": ["HTML5 Canvas", "CSS3", "JavaScript"],
+    "repoLink": "https://github.com/rohit73848/image-editor",
+    "demoLink": "https://rohit73848.github.io/image-editor/"
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+    "title": "To-Do List Web App",
+    "description": "Clean, minimal to-do list app to add, complete, and delete tasks, with task statistics and persistent storage using localStorage.",
+    "tags": ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
+    "repoLink": "https://github.com/rohit73848/todo-web-app",
+    "demoLink": "https://rohit73848.github.io/todo-web-app/"
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+    "title": "Personal Portfolio",
+    "description": "Single-page developer portfolio featuring a canvas-based scrollytelling hero section, parallax overlays, glassmorphism UI, and a dynamic featured projects showcase.",
+    "tags": ["HTML5", "Tailwind CSS", "SCSS", "JavaScript"],
+    "repoLink": "https://github.com/rohit73848/Personal-Portfolio",
+    "demoLink": "https://rohit73848.github.io/Personal-Portfolio/#"
+  },
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+    "title": "MAC-OS (React Portfolio UI)",
+    "description": "A macOS desktop-inspired UI built with React and SCSS — draggable/resizable windows, a top Nav bar with live clock, and a hover-animated Dock.",
+    "tags": ["React", "Vite", "SCSS", "react-rnd"],
+    "repoLink": "https://github.com/rohit73848/mac-os",
+    "demoLink": null
+  }
+]
