@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import MacWindow from "./MacWindow";
 import "./cli.scss";
 
-const Cli = () => {
+const Cli = ({windowName, setWindowsState,}) => {
   const [history, setHistory] = useState([
     { type: "output", text: "Welcome to macOS Terminal (zsh)" },
     { type: "output", text: "Type 'help' to see a list of available commands.\n" },
@@ -58,8 +58,8 @@ const Cli = () => {
 
       case "contact":
         return `Contact Info:
-- Email: biswasrahit6@gmail.com
-- GitHub: https://github.com/rahitbiswas`;
+- Email: rohit.noni2006@gmail.com
+- GitHub: https://github.com/rohit73848`;
 
       case "date":
         return new Date().toString();
@@ -93,9 +93,10 @@ const Cli = () => {
 
     setInput("");
   };
-
+ 
   return (
-    <MacWindow>
+    <MacWindow windowName={windowName}
+      setWindowsState={setWindowsState}>
       <div className="cli-window" onClick={() => inputRef.current?.focus()}>
         <div className="cli-content">
           {history.map((item, index) => (

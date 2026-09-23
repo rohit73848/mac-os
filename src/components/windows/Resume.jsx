@@ -2,9 +2,10 @@ import React from "react";
 import MacWindow from "./MacWindow";
 import "./resume.scss";
 
-const Resume = () => {
+const Resume = ({windowName, setWindowsState,}) => {
   return (
-    <MacWindow>
+    <MacWindow windowName={windowName}
+      setWindowsState={setWindowsState}>
       <div className="resume-window">
         <iframe
           src="/Rahit_Biswas_Resume.pdf"
@@ -14,5 +15,5 @@ const Resume = () => {
     </MacWindow>
   );
 };
-
+ 
 export default Resume;
