@@ -1,0 +1,110 @@
+/**
+ * @file: profile.config.ts
+ * @author: Rahit Biswas
+ * @summary: A BCA student building real frontend projects, one bug at a time.
+ */
+
+// --------------------------------------------------
+// 1. CORE DEPENDENCIES & SKILLS
+// --------------------------------------------------
+
+const TECH_STACK = {
+  frontend: [
+    "HTML5",       // 95%
+    "CSS3",        // 90%
+    "JavaScript",  // 85%
+    "React.js",    // 70%
+    "TailwindCSS", // 70%
+    "SCSS",        // 75%
+  ],
+  currentlyLearning: ["Backend Development", "Node.js"],
+  tools: ["Git", "GitHub", "VS Code"]
+};
+
+// --------------------------------------------------
+// 2. LEARNING LOG (Reverse Chronological)
+// --------------------------------------------------
+
+class LearningHistory {
+
+  /**
+   * CURRENT FOCUS
+   * @period May 2026 - Present
+   */
+  public async SheriyanCodingSchool(): Promise<Impact> {
+    const program = "Cohort 2.0 — Web Development";
+
+    // Key Milestones
+    const built = await self.build(["Personal Portfolio", "Snake Game", "Image Editor", "macOS UI Clone"]);
+    const skillsGained = "HTML, CSS, JS, React, Tailwind, SCSS";
+
+    const currentGoal = this.learn(["Backend Development", "Node.js"]);
+    const path = "Frontend -> Full Stack";
+
+    return { program, built, skillsGained, currentGoal, path };
+  }
+
+  /**
+   * BACKGROUND
+   * @period 2023 - 2026
+   */
+  public AcademicJourney(): void {
+    this.milestone = "Completed Higher Secondary";
+    this.focus = "Discovered a passion for coding during a gap year";
+
+    // Enrolled in BCA at IGNOU, July 2026
+    // Started building real projects instead of just tutorials
+  }
+}
+
+// --------------------------------------------------
+// 3. PROJECTS SHIPPED
+// --------------------------------------------------
+
+interface Project {
+  name: string;
+  stack: string;
+  status: string;
+}
+
+const projectLog: Project[] = [
+  {
+    name: "Personal Portfolio Website",
+    stack: "HTML, CSS, JavaScript — scroll-driven animation",
+    status: "Live",
+  },
+  {
+    name: "macOS UI Clone",
+    stack: "React.js",
+    status: "Live",
+  },
+  {
+    name: "Snake Game",
+    stack: "JavaScript, Canvas",
+    status: "Live",
+  },
+  {
+    name: "Image Editor",
+    stack: "JavaScript, Canvas API",
+    status: "Live",
+  },
+];
+
+// --------------------------------------------------
+// 4. ACADEMIC BACKGROUND
+// --------------------------------------------------
+
+const education = new Map<string, string>([
+  ["IGNOU", "BCA (Bachelor of Computer Applications) — Ongoing"],
+  ["Higher Secondary", "Class 12 — 2025"],
+]);
+
+export default new LearningHistory();
+
+# TERMINAL OUTPUT
+# ---------------------------------------
+$ user --status
+> Status: Open to Internship Opportunities
+> Location: West Bengal, India / Remote
+> Loading Skills... [||||||||||] 100%
+> Ready to build.
