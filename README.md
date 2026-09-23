@@ -5,7 +5,7 @@ A sleek, interactive, and responsive macOS-inspired web desktop experience and p
 ---
 
 ## 🔗 Live Demo
-> 🚀 **[View Live Demo]([YOUR_LIVE_DEMO_URL_HERE](https://rohit73848.github.io/mac-os/))** *(https://rohit73848.github.io/mac-os/))*
+> 🚀 **[View Live Demo]([YOUR_LIVE_DEMO_URL_HERE](https://rohit73848.github.io/mac-os/))** *https://rohit73848.github.io/mac-os/*
 
 ---
 
