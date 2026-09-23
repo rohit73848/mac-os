@@ -50,4 +50,13 @@
   .main-content {
     height: 100%;
   }
+
+  *::-webkit-scrollbar{
+    width: 6px;
+  }
+  *::-webkit-scrollbar-thumb{
+    background-color: #444;
+    border-radius: 4px;
+  }
+
 }
