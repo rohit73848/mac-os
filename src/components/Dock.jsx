@@ -1,37 +1,127 @@
-import React from 'react'
-import './dock.scss'
-const Dock = ({windowsState,setWindowsState}) => {
+import React from "react";
+import "./dock.scss";
+
+const Dock = ({ windowsState, setWindowsState, bringToFront }) => {
+  const toggleWindow = (name) => {
+    setWindowsState((state) => {
+      const willOpen = !state[name];
+      if (willOpen && bringToFront) {
+        bringToFront(name);
+      }
+      return { ...state, [name]: willOpen };
+    });
+  };
+
+  const handleMail = () => {
+    window.location.href = "mailto:biswasrahit6@gmail.com";
+  };
+
+  const handleCalendar = () => {
+    window.open("https://calendar.google.com", "_blank", "noopener,noreferrer");
+  };
+
+  const handleInstagram = () => {
+    window.open(
+      "https://www.instagram.com/rahit._official/",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
-    <footer className='dock'>
+    <footer className="dock-wrapper">
+      <div className="dock">
+        {/* GitHub */}
         <div
-        onClick={()=>{setWindowsState(state=>({...state, github:true}))}} 
-         className="icon github"><img src="./public/doc-icons/github.svg" alt="github" /></div>
+          onClick={() => toggleWindow("github")}
+          className={`dock-item ${windowsState.github ? "active" : ""}`}
+          data-tooltip="GitHub"
+        >
+          <div className="icon github">
+            <img src="/doc-icons/github.svg" alt="GitHub" />
+          </div>
+          {windowsState.github && <span className="active-dot" />}
+        </div>
 
+        {/* Note */}
         <div
-        onClick={()=>{setWindowsState(state=>({...state, note:true}))}}  
-        className="icon note"><img src="./public/doc-icons/note.svg" alt="note" /></div>
+          onClick={() => toggleWindow("note")}
+          className={`dock-item ${windowsState.note ? "active" : ""}`}
+          data-tooltip="Notes"
+        >
+          <div className="icon note">
+            <img src="/doc-icons/note.svg" alt="Notes" />
+          </div>
+          {windowsState.note && <span className="active-dot" />}
+        </div>
 
-        <div 
-        onClick={()=>{setWindowsState(state=>({...state, resume:true}))}} 
-        className="icon pdf"><img src="./public/doc-icons/pdf.svg" alt="pdf" /></div>
+        {/* Resume */}
+        <div
+          onClick={() => toggleWindow("resume")}
+          className={`dock-item ${windowsState.resume ? "active" : ""}`}
+          data-tooltip="Resume"
+        >
+          <div className="icon pdf">
+            <img src="/doc-icons/pdf.svg" alt="Resume" />
+          </div>
+          {windowsState.resume && <span className="active-dot" />}
+        </div>
 
-        <div className="icon calender"><img src="./public/doc-icons/calender.svg" alt="calender" /></div>
+        {/* Calendar */}
+        <div
+          onClick={handleCalendar}
+          className="dock-item"
+          data-tooltip="Calendar"
+        >
+          <div className="icon calender">
+            <img src="/doc-icons/calender.svg" alt="Calendar" />
+          </div>
+        </div>
 
-        <div 
-        onClick={()=>{setWindowsState(state=>({...state, spotify:true}))}} 
-        className="icon spotify"><img src="./public/doc-icons/spotify.svg" alt="spotify" /></div>
+        {/* Spotify */}
+        <div
+          onClick={() => toggleWindow("spotify")}
+          className={`dock-item ${windowsState.spotify ? "active" : ""}`}
+          data-tooltip="Spotify"
+        >
+          <div className="icon spotify">
+            <img src="/doc-icons/spotify.svg" alt="Spotify" />
+          </div>
+          {windowsState.spotify && <span className="active-dot" />}
+        </div>
 
-        <div 
-        onClick={()=>{window.open("rohit.noni2006@gmail.com","_blank")}}
-        className="icon mail"><img src="./public/doc-icons/mail.svg" alt="mail" /></div>
+        {/* Mail */}
+        <div onClick={handleMail} className="dock-item" data-tooltip="Mail">
+          <div className="icon mail">
+            <img src="/doc-icons/mail.svg" alt="Mail" />
+          </div>
+        </div>
 
-        <div className="icon link"><img src="./public/doc-icons/link.svg" alt="link" /></div>
+        {/* Instagram / Link */}
+        <div
+          onClick={handleInstagram}
+          className="dock-item"
+          data-tooltip="Instagram"
+        >
+          <div className="icon link">
+            <img src="/doc-icons/link.svg" alt="Instagram" />
+          </div>
+        </div>
 
-        <div 
-        onClick={()=>{setWindowsState(state=>({...state, cli:true}))}} 
-        className="icon cli"><img src="./public/doc-icons/cli.svg" alt="cli" /></div>
-    </footer> 
-  )
-}
+        {/* Terminal (CLI) */}
+        <div
+          onClick={() => toggleWindow("cli")}
+          className={`dock-item ${windowsState.cli ? "active" : ""}`}
+          data-tooltip="Terminal"
+        >
+          <div className="icon cli">
+            <img src="/doc-icons/cli.svg" alt="Terminal" />
+          </div>
+          {windowsState.cli && <span className="active-dot" />}
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-export default Dock
+export default Dock;

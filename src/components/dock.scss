@@ -1,72 +1,138 @@
-.dock {
-  .github {
-    background: linear-gradient(180deg, #464545 0%, #1a1a1a 100%);
-  }
-  .note {
-    background: linear-gradient(180deg, #ffd026 0%, #ff9500 100%);
-  }
-  .pdf {
-    background: linear-gradient(180deg, #ff453a 0%, #d71920 100%);
-  }
-  .mail {
-    background: linear-gradient(180deg, #54c5f8 0%, #007aff 100%);
-  }
-  .spotify {
-    background: linear-gradient(to bottom, #2bdf6a, #129941);
-  }
-  .cli {
-    background: linear-gradient(180deg, #3a1c4d 0%, #1a0b2e 100%);
-  }
-  .calender {
-    background: linear-gradient(180deg, #a855f7 0%, #6b21a8 100%);
-  }
-  .link {
-    background: linear-gradient(180deg, #34aadc 0%, #007aff 100%);
-  }
-
-  display: flex;
+.dock-wrapper {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.75rem;
   left: 50%;
-  gap: 1.1rem;              
   transform: translateX(-50%);
-  background-color: rgba(63, 63, 63, 0.329);
-  padding-inline: 1.1rem;
-  padding-block: 0.6rem;
-  border-radius: 1rem;
-  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+}
 
-  .icon {
-    padding: 0.6rem;
-    border-radius: 0.5rem;
-    width: 2.25rem;            
-    height: 2.25rem;
+.dock {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.85rem;
+  background: rgba(40, 40, 48, 0.45);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  padding: 0.45rem 0.75rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 0.5px rgba(255, 255, 255, 0.1);
+
+  .dock-item {
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    aspect-ratio: 1/1;
-    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    /* macOS Tooltip */
+    &::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -38px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.85);
+      background: rgba(30, 30, 35, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #f1f5f9;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      white-space: nowrap;
       pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .active-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+      position: absolute;
+      bottom: -7px;
+    }
+
+    .icon {
+      padding: 0.55rem;
+      border-radius: 0.75rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.22s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      &.github {
+        background: linear-gradient(180deg, #3d3d42 0%, #1c1c1f 100%);
+      }
+      &.note {
+        background: linear-gradient(180deg, #ffd644 0%, #ff9f0a 100%);
+      }
+      &.pdf {
+        background: linear-gradient(180deg, #ff5b52 0%, #e02424 100%);
+      }
+      &.calender {
+        background: linear-gradient(180deg, #b062ff 0%, #7c3aed 100%);
+      }
+      &.spotify {
+        background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
+      }
+      &.mail {
+        background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+      }
+      &.link {
+        background: linear-gradient(180deg, #f43f5e 0%, #be123c 100%);
+      }
+      &.cli {
+        background: linear-gradient(180deg, #383842 0%, #18181b 100%);
+      }
+    }
+
+    &:hover .icon {
+      transform: scale(1.38) translateY(-14px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    &:active .icon {
+      transform: scale(1.22) translateY(-8px);
     }
   }
 
-  .icon:hover {
-    transform: scale(1.5) translateY(-30%);
-    z-index: 2;
+  /* Magnification neighbors */
+  .dock-item:has(+ .dock-item:hover) .icon,
+  .dock-item:hover + .dock-item .icon {
+    transform: scale(1.18) translateY(-7px);
   }
 
-  .icon:has(+ .icon:hover),
-  .icon:hover + .icon {
-    transform: scale(1.25) translateY(-15%);
-  }
-
-  .icon:has(+ * + .icon:hover),
-  .icon:hover + .icon + .icon {
-    transform: scale(1.1) translateY(-8%);
+  .dock-item:has(+ * + .dock-item:hover) .icon,
+  .dock-item:hover + .dock-item + .dock-item .icon {
+    transform: scale(1.08) translateY(-3px);
   }
 }

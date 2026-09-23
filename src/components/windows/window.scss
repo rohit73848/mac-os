@@ -1,68 +1,141 @@
 .window {
   height: 100%;
-  background-color: #060606;
-  border-radius: 0.4rem;
+  width: 100%;
+  background: rgba(22, 22, 26, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-radius: 10px;
   overflow: hidden;
-  color: rgb(161, 161, 161);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
-  font-weight: 500;
+  color: #e6edf3;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55),
+              0 0 0 1px rgba(255, 255, 255, 0.12);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  transition: box-shadow 0.2s ease;
+
   .nav {
-    padding-inline: 0.65rem;
-    padding-block: 0.25rem;
-    background-color: rgb(39, 39, 39);
-    font-size: 0.9rem;
+    height: 32px;
+    min-height: 32px;
+    padding-inline: 0.85rem;
+    background: linear-gradient(180deg, rgba(46, 46, 52, 0.95) 0%, rgba(32, 32, 36, 0.95) 100%);
+    font-size: 0.82rem;
     display: flex;
-    gap: 1.5rem;
     align-items: center;
-    border-bottom: 1px solid rgb(49, 49, 49);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    user-select: none;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
     .dots {
       display: flex;
-      gap: 0.25rem;
+      gap: 7px;
+      align-items: center;
+      z-index: 2;
 
       .dot {
-        height: 10px;
-        width: 10px;
-        background-color: white;
+        height: 12px;
+        width: 12px;
         border-radius: 50%;
-      }
-      .red {
-        background-color: #da0b0b;
-      }
-      .red:hover{
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        background-color: #a00808;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        transition: transform 0.15s ease, filter 0.15s ease;
+
+        .dot-icon {
+          font-size: 8px;
+          line-height: 1;
+          color: rgba(0, 0, 0, 0.65);
+          font-weight: 800;
+          opacity: 0;
+          transition: opacity 0.12s ease;
+          pointer-events: none;
+        }
+
+        &:hover {
+          filter: brightness(1.1);
+        }
+
+        &:active {
+          filter: brightness(0.85);
+        }
       }
+
+      &:hover {
+        .dot .dot-icon {
+          opacity: 1;
+        }
+      }
+
+      .red {
+        background: #ff5f56;
+        border: 0.5px solid rgba(224, 68, 62, 0.8);
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      }
+
       .yellow {
-        background-color: #d5d810;
+        background: #ffbd2e;
+        border: 0.5px solid rgba(222, 161, 35, 0.8);
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
       }
+
       .green {
-        background-color: #0dc50d;
+        background: #27c93f;
+        border: 0.5px solid rgba(26, 171, 41, 0.8);
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      pointer-events: none;
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: rgba(235, 235, 245, 0.75);
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-inline: 4rem;
       }
     }
   }
+
   .main-content {
-    height: 100%;
+    flex: 1;
+    height: calc(100% - 32px);
     overflow: hidden;
     position: relative;
-}
+  }
 
-  *::-webkit-scrollbar{
+  /* macOS custom scrollbar */
+  ::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
   }
-  *::-webkit-scrollbar-thumb{
-    background-color: #444;
-    border-radius: 4px;
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
-
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.32);
+    }
+  }
 }
