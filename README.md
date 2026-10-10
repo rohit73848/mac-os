@@ -57,7 +57,7 @@ Make sure you have [Node.js](https://nodejs.org/) (v18 or higher) installed on y
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/rahitbiswas/mac-os.git
+   git clone https://github.com/rohit73848/mac-os.git
    cd mac-os
    ```
 
